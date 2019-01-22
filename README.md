@@ -1,5 +1,5 @@
 # pwannot
-=========
+---------
 
 R package for automated pathway annotation in single-cell RNA-seq
 
@@ -30,18 +30,4 @@ annotation_results <- pathways_annotation(pbmc, genes_list, 10, 500, 10000)
 
 ```
 
-Now we have a data frame with clusters as columns and pathway names as rows with values as adjusted p-values.
-
-# Visualize the interested pathway
-----------------------------------
-
-For visualization the expression distribution of interested pathway (e.g., "KEGG_ALLOGRAFT_REJECTION"), we use simply function:
-
-```{r}
-plot_target_pw(pbmc, annotation_results, "KEGG_ALLOGRAFT_REJECTION")
-```
-
-![](Readme_files/figure-markdown_github/networks-1.png)
-
-
-
+Now we have a data frame with cluster
