@@ -12,7 +12,7 @@ using namespace arma;
 arma::mat cumulative_matrix(const arma::mat& X,
                             const arma::uvec& pathway_sizes,
                             const arma::mat& reference_scores,
-                            int sampling_size = 100) {
+                            int sampling_size) {
   int genes_count = X.n_rows;
   int cell_count = X.n_cols;
   int max_size = pathway_sizes.max();
