@@ -24,9 +24,17 @@ Next run the analysis (time-consuming step). "10" is the minimal size of pathway
 
 ```{r}
 annotation_results <- pathways_annotation(pbmc, genes_list, 10, 500, 10000)
-
 ```
 
-Now we have a data frame with cluster
+Now we have a data frame with cluster as columns, pathways as rows with adjusted p-values.
+
+# Visualize
+
+For vizualisation the expression of target pathway (e.g., "KEGG_ALLOGRAFT_REJECTION") distribution we use simply function:
+
+```{r}
+plot_target_pw(pbmc, annotation_results, "KEGG_ALLOGRAFT_REJECTION")
+```
+
 
 ![](https://github.com/mariafiruleva/pwannot/blob/master/Readme_files/figure-markdown_github/Allograft_rejection.png)
