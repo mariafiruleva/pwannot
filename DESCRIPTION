@@ -1,12 +1,15 @@
 Package: pwannot
 Type: Package
-Title: What the package does (short line)
+Title: pwannot is a package for automated pathway annotation in single-cell RNA-seq
 Version: 1.0
 Date: 2019-01-11
 Author: Who wrote it
 Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
 License: What license is it under?
-Imports: Rcpp (>= 1.0.0)
+Imports: Rcpp (>= 1.0.0),
+  Matrix,
+  Seurat,
+  ggplot2
 LinkingTo: Rcpp, RcppArmadillo
-RoxygenNote: 6.1.0.9000
+RoxygenNote: 6.1.1
