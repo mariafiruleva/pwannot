@@ -10,6 +10,10 @@ License: What license is it under?
 Imports: Rcpp (>= 1.0.0),
   Matrix,
   Seurat,
-  ggplot2
+  ggplot2,
+  stats,
+  progress
+Encoding: UTF-8
+LazyData: true
 LinkingTo: Rcpp, RcppArmadillo
-RoxygenNote: 6.1.1
+RoxygenNote: 6.1.0.9000

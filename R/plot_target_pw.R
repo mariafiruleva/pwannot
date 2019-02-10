@@ -11,7 +11,7 @@
 #' @return the plot of a pathway distribution
 #' @export
 #' 
-#' @examples
+#' @examples plot_target__pw(pbmc, annotation_result, "KEGG_ALLOGRAFT_REJECTION")
 plot_target_pw <- function(object, annotation_result, pw_name) {
   data <- object@scale.data
   tsne <- object@dr$tsne@cell.embeddings
