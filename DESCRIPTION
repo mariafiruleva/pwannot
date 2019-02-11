@@ -15,5 +15,5 @@ Imports: Rcpp (>= 1.0.0),
   progress
 Encoding: UTF-8
 LazyData: true
-LinkingTo: Rcpp, RcppArmadillo
+LinkingTo: Rcpp, RcppArmadillo, RcppProgress
 RoxygenNote: 6.1.0.9000
