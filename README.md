@@ -35,7 +35,7 @@ Now we have a data frame with cluster as columns, pathways as rows with adjusted
 For vizualisation the expression of target pathway (e.g., ""LEE_DIFFERENTIATING_T_LYMPHOCYTE"") distribution we use simply function:
 
 ```{r}
-plot_target_pw(pbmc, genes_list[""LEE_DIFFERENTIATING_T_LYMPHOCYTE"], "tsne")+
+plot_target_pw(pbmc, genes_list["LEE_DIFFERENTIATING_T_LYMPHOCYTE"], "tsne")+
 ggtitle("LEE_DIFFERENTIATING_T_LYMPHOCYTE")
 ```
 
