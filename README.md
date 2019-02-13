@@ -13,12 +13,12 @@ devtools::install_github("mariafiruleva/pwannot")
 
 To start working, we must have a scaled and clustered scRNA-seq dataset and the set of pathways. 
 
-For demonstration of package functionality, we will use a dataset of 996 Peripheral Blood Mononuclear Cells (PBMCs) made publically available by 10X Genomics ([data](http://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_v2/pbmc_1k_v2_filtered_feature_bc_matrix.tar.gz)) and prepared by Seurat standard workflow v3.0 [Seurat workflow]((https://satijalab.org/seurat/essential_commands.html)).
+For demonstration of package functionality, we will use a dataset of 996 Peripheral Blood Mononuclear Cells (PBMCs) made publically available by 10X Genomics ([data](http://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_v2/pbmc_1k_v2_filtered_feature_bc_matrix.tar.gz)) and prepared by [Seurat standard workflow v3.0](https://satijalab.org/seurat/essential_commands.html).
 
 ```{r}
 library(pwannot)
-pbmc <- readRDS('pbmc_after_seurat.rds')
-genes_list <- readRDS(KEGG_pathways.rds)
+pbmc <- readRDS("pbmc_after_seurat.rds")
+genes_list <- readRDS("KEGG_pathways.rds")
 ```
 # Find upregulated pathways
 
@@ -32,7 +32,7 @@ Now we have a data frame with cluster as columns, pathways as rows with adjusted
 
 # Visualize
 
-For vizualisation the expression of target pathway (e.g., ""LEE_DIFFERENTIATING_T_LYMPHOCYTE"") distribution we use simply function:
+For vizualisation the expression of target pathway (e.g., "LEE_DIFFERENTIATING_T_LYMPHOCYTE") distribution we use simply function:
 
 ```{r}
 plot_target_pw(pbmc, genes_list["LEE_DIFFERENTIATING_T_LYMPHOCYTE"], "tsne")+
