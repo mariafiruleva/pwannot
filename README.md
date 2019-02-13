@@ -13,7 +13,7 @@ devtools::install_github("mariafiruleva/pwannot")
 
 To start working, we must have a scaled and clustered scRNA-seq dataset and the set of pathways. 
 
-For demonstration of package functionality, we will use a dataset of 996 Peripheral Blood Mononuclear Cells (PBMCs) made publically available by 10X Genomics ([data](http://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_v2/pbmc_1k_v2_filtered_feature_bc_matrix.tar.gz)) and prepared by Seurat standard workflow v3.0 [Seurat workflow](https://satijalab.org/seurat/essential_commands.html)
+For demonstration of package functionality, we will use a dataset of 996 Peripheral Blood Mononuclear Cells (PBMCs) made publically available by 10X Genomics ([data](http://cf.10xgenomics.com/samples/cell-exp/3.0.0/pbmc_1k_v2/pbmc_1k_v2_filtered_feature_bc_matrix.tar.gz)) and prepared by Seurat standard workflow v3.0 [Seurat workflow]((https://satijalab.org/seurat/essential_commands.html)).
 
 ```{r}
 library(pwannot)
@@ -40,4 +40,4 @@ ggtitle("LEE_DIFFERENTIATING_T_LYMPHOCYTE")
 ```
 
 
-![](https://github.com/mariafiruleva/pwannot/blob/master/Readme_files/figure-markdown_github/pwannot_illustration.png)
+![](https://github.com/mariafiruleva/pwannot/blob/master/Readme_files/figure-markdown_github/pwannot_illustation.png)
