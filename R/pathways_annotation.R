@@ -11,15 +11,15 @@
 #' @param genes_list is a list of pathways which are included a pathway with a genes list, each of them contained the pathways genes in a character format (notice you should check whether genes of your organism capitalize or not)
 #' @param min_length is a minimal size (number of genes) of pathways which will be analyzed
 #' @param max_length is a maximal size (number of genes) of pathways which will be analyzed
-#' @param p_val_border is a decimal places of p-value in cumulative matrix which define the number of success states in hypergeometric distribution
+#' @param significance_level is a decimal places of p-value in cumulative matrix which define the number of success states in hypergeometric distribution
 #' @param sample_number is a nubmer of random sample generations (10000 is recommended)
 #'
 #' @return the p-value matrix with pathways as rows and cell clusters as cols
 #' @export
 #'
-#' @examples pathways_annotation(pbmc, genes_list, 20, 500, 4, 10000)
-pathways_annotation <- function(object, genes_list, min_length=10, max_length=500,
-                                significance_level=0.05, sample_number=1000) {
+#' @examples pathways_annotation(pbmc, genes_list, 20, 500, 0.05, 10000)
+pathways_annotation <- function(object, genes_list, min_length = 10, max_length = 500,
+                                significance_level = 0.05, sample_number = 1000) {
  
   data <- GetAssayData(object, slot = "scale.data")
   N <- length(GetAssayData(object, slot = "data")@Dimnames[[2]])

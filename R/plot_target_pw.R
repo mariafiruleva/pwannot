@@ -18,7 +18,7 @@ plot_target_pw <- function(object, gene_set, reduction="tsne") {
   tsne <- as.data.frame(tsne)
   colnames(tsne) <- paste0(reduction, 1:ncol(tsne))
  
-  genes_indexes <- which(rownames(data) %in% gene_set)
+  genes_indexes <- which(rownames(data) %in% gene_set[[1]])
   expression_signaling <- colMeans(data[genes_indexes,])
   tsne$expression <- expression_signaling
  
