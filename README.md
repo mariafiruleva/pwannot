@@ -17,8 +17,8 @@ For demonstration of package functionality, we will use a dataset of 996 Periphe
 
 ```{r}
 library(pwannot)
-pbmc <- readRDS("pbmc_after_seurat.rds")
-genes_list <- readRDS("KEGG_pathways.rds")
+pbmc <- readRDS(file.path(find.package('pwannot'),'data','pbmc_after_seurat.rds'))
+genes_list <- readRDS(file.path(find.package('pwannot'),'data','KEGG_pathways.rds'))
 ```
 # Find upregulated pathways
 
