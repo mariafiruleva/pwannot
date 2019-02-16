@@ -5,13 +5,13 @@
 #' @import ggplot2
 #'
 #' @param object is a Seurat object after scaling and clustering
-#' @param annotation_result is your result of pathways_annotation function
-#' @param pw_name is a name of interested pathway
+#' @param annotation_result is a set of genes of target pathway
+#' @param reduction is a reduction level which will be use for visualization
 #'
 #' @return the plot of a pathway distribution
 #' @export
 #'
-#' @examples plot_target__pw(pbmc, annotation_result, "KEGG_ALLOGRAFT_REJECTION")
+#' @examples plot_target_pw(pbmc, genes_list["LEE_DIFFERENTIATING_T_LYMPHOCYTE"], "tsne")
 plot_target_pw <- function(object, gene_set, reduction="tsne") {
   data <- GetAssayData(object, slot = "scale.data")
   tsne <- object@reductions[[reduction]]@cell.embeddings
