@@ -7,8 +7,8 @@
 using namespace Rcpp;
 
 // cumulative_matrix
-arma::mat cumulative_matrix(const arma::mat& X, const arma::uvec& pathway_sizes, const arma::mat& reference_scores, int sampling_size);
-RcppExport SEXP _pwannot_cumulative_matrix(SEXP XSEXP, SEXP pathway_sizesSEXP, SEXP reference_scoresSEXP, SEXP sampling_sizeSEXP) {
+arma::mat cumulative_matrix(const arma::mat& X, const arma::uvec& pathway_sizes, const arma::mat& reference_scores, int sampling_size, bool display_progress);
+RcppExport SEXP _pwannot_cumulative_matrix(SEXP XSEXP, SEXP pathway_sizesSEXP, SEXP reference_scoresSEXP, SEXP sampling_sizeSEXP, SEXP display_progressSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -16,50 +16,8 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const arma::uvec& >::type pathway_sizes(pathway_sizesSEXP);
     Rcpp::traits::input_parameter< const arma::mat& >::type reference_scores(reference_scoresSEXP);
     Rcpp::traits::input_parameter< int >::type sampling_size(sampling_sizeSEXP);
-    rcpp_result_gen = Rcpp::wrap(cumulative_matrix(X, pathway_sizes, reference_scores, sampling_size));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_hello_world
-arma::mat rcpparma_hello_world();
-RcppExport SEXP _pwannot_rcpparma_hello_world() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpparma_hello_world());
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_outerproduct
-arma::mat rcpparma_outerproduct(const arma::colvec& x);
-RcppExport SEXP _pwannot_rcpparma_outerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_outerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_innerproduct
-double rcpparma_innerproduct(const arma::colvec& x);
-RcppExport SEXP _pwannot_rcpparma_innerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_innerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_bothproducts
-Rcpp::List rcpparma_bothproducts(const arma::colvec& x);
-RcppExport SEXP _pwannot_rcpparma_bothproducts(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_bothproducts(x));
+    Rcpp::traits::input_parameter< bool >::type display_progress(display_progressSEXP);
+    rcpp_result_gen = Rcpp::wrap(cumulative_matrix(X, pathway_sizes, reference_scores, sampling_size, display_progress));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -77,11 +35,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_pwannot_cumulative_matrix", (DL_FUNC) &_pwannot_cumulative_matrix, 4},
-    {"_pwannot_rcpparma_hello_world", (DL_FUNC) &_pwannot_rcpparma_hello_world, 0},
-    {"_pwannot_rcpparma_outerproduct", (DL_FUNC) &_pwannot_rcpparma_outerproduct, 1},
-    {"_pwannot_rcpparma_innerproduct", (DL_FUNC) &_pwannot_rcpparma_innerproduct, 1},
-    {"_pwannot_rcpparma_bothproducts", (DL_FUNC) &_pwannot_rcpparma_bothproducts, 1},
+    {"_pwannot_cumulative_matrix", (DL_FUNC) &_pwannot_cumulative_matrix, 5},
     {"_pwannot_reference_matrix", (DL_FUNC) &_pwannot_reference_matrix, 2},
     {NULL, NULL, 0}
 };
